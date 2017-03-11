@@ -1,0 +1,85 @@
+React Notes
+
+npm install
+  (install dependencies)
+npm start
+  (make local server available)
+localhost:8080
+npm install --save
+  -save this package to the package.json file
+  -npm install --save youtube-api-search
+
+
+Components
+-javascript functions (code snippets) that produce HTML (views/templates)
+
+const
+  (making a variable that isn't going to change; constant)
+
+  const App = function() {
+    return <div>Hi!</div>;   (this code is called JSX)
+  }
+
+JSX
+  -similar to HTML
+  -cannot be understood by browser
+  -produces HTML for DOM to register
+
+*** SELF CLOSING TAG
+  -nothing inside the opening and closing tag (shorthand)
+  example:
+    <div />
+    <App />
+
+  ReactDOM.render(<App />);
+
+  //this App tag instantiates the app component
+
+
+React vs ReactDOM
+  -two libraries
+    -React: main library that knows how to build components
+    -ReactDOM: library that knows how to publish components to DOM
+
+const App = () => {
+  return <div>Hi!</div>;
+}
+    ***this is ES6 syntax called FAT ARROW (does act in place of function but DIFFERENT value of THIS)
+
+
+ES6 Class
+-Class Based Components
+***Only class based components have STATE
+
+class SearchBar extends React.Component {
+  render() {
+    return <input />;
+  }
+}
+
+  -extends the Compnent class from React
+  -render() similar to a function but more like an initialize
+
+State
+***Only class based components have STATE
+  -whenever state changes
+    -render function reruns
+      -any children get rerun as well
+
+  this.state = { term: '' }
+
+    -initialize it with object { term: '' }
+      -term = property on state
+      -can record change on this property ('term')
+
+  this.setState
+
+    -only way to manipulate the state
+
+Controlled Component
+  -its value is controlled by state
+
+Downward DataFlow
+  -most parent component to handle fetch data
+
+
